@@ -45,7 +45,7 @@ void max_test_3(void) {
 int main ( void )
 {
    CU_pSuite pSuite = NULL;
-   unsigned int status = 0;
+   unsigned int nbFailures = 0;
 
    /* initialize the CUnit test registry */
    if ( CUE_SUCCESS != CU_initialize_registry() )
@@ -71,10 +71,10 @@ int main ( void )
    // Run all tests using the basic interface
    CU_basic_set_mode(CU_BRM_NORMAL);
    CU_basic_run_tests();
-   status = CU_get_number_of_tests_failed();
+   nbFailures = CU_get_number_of_tests_failed();
    CU_basic_show_failures(CU_get_failure_list());
   
    /* Clean up registry and return */
    CU_cleanup_registry();
-   return status;
+   return nbFailures == 0;
 }
