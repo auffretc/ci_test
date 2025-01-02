@@ -1,11 +1,11 @@
 COMPILER=gcc
 SRCS:=$(filter-out testsuite.c, $(wildcard *.c))
-OBJS:=$(SRCS:%=%.o)
+OBJS:=$(patsubst %.c, %.o, $(SRCS)) 
 
-all: $(SRCS)
+build: $(SRCS) $(OBJS)
 	gcc -o max.o -c max.c
 
-cppcheck: $(SRC)
+cppcheck: $(SRCS)
 	cppcheck max.c
 
 testsuite: $(OBJS)
