@@ -10,4 +10,4 @@ cppcheck: $(SRCS)
 
 testsuite: $(OBJS)
 	$(COMPILER) $(OBJS) testsuite.c -lcunit -o $@
-	./@
+	./$@
