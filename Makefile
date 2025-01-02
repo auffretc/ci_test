@@ -2,7 +2,7 @@ COMPILER=gcc
 SRCS:=$(filter-out testsuite.c,$(wildcard *.c))
 OBJS:=$(FICHIERS:%=%.o)
 
-all: $(SRC)
+all: $(SRCS)
     gcc -o $@ -c $^
 
 cppcheck: $(SRC)
