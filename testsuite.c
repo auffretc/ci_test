@@ -73,8 +73,7 @@ int main ( void )
    status = CU_basic_run_tests();
    printf("\n");
    CU_basic_show_failures(CU_get_failure_list());
-   printf("\n\n");*/
-
+  
    /* Clean up registry and return */
    CU_cleanup_registry();
    return status;
