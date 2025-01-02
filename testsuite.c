@@ -71,7 +71,7 @@ int main ( void )
    // Run all tests using the basic interface
    CU_basic_set_mode(CU_BRM_NORMAL);
    CU_basic_run_tests();
-   status = CU_get_number_of_tests_failed()
+   status = CU_get_number_of_tests_failed();
    CU_basic_show_failures(CU_get_failure_list());
   
    /* Clean up registry and return */
