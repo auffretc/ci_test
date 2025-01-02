@@ -1,13 +1,13 @@
 COMPILER=gcc
-SRCS:=$(filter-out testsuite.c,$(wildcard *.c))
-OBJS:=$(FICHIERS:%=%.o)
+SRCS:=$(filter-out testsuite.c, $(wildcard *.c))
+OBJS:=$(SRCS:%=%.o)
 
 all: $(SRCS)
-	gcc -o $@ -c $^
+	gcc -o max.o -c max.c
 
 cppcheck: $(SRC)
-	cppcheck $(SRCS)
+	cppcheck max.c
 
 testsuite: $(OBJS)
-	$(COMPILER) max.o testsuite.c -lcunit -o $@
+	$(COMPILER) $(OBJS) testsuite.c -lcunit -o $@
 	./@
