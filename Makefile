@@ -6,7 +6,7 @@ build: $(SRCS)
 	$(COMPILER) -o max.o -c max.c
 
 cppcheck: $(SRCS)
-	cppcheck max.c
+	cppcheck --error-exitcode=1 .
 
 testsuite: build testsuite.c
 	$(COMPILER) $(OBJS) testsuite.c -lcunit -o $@
