@@ -5,7 +5,7 @@ OBJS:=$(patsubst %.c, %.o, $(SRCS))
 build: $(SRCS)
 	$(COMPILER) -o math.o -c math.c
 
-cppcheck: $(SRCS)
+analyse: $(SRCS)
 	cppcheck --error-exitcode=1 .
 
 testsuite: build testsuite.c

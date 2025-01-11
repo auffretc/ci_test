@@ -1,7 +1,7 @@
 #include <CUnit/CUnit.h>
 #include <CUnit/Basic.h>
 
-#include "max.h"
+#include "math.h"
 
 #include <stdio.h>  // for printf
 
