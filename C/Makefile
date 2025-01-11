@@ -3,7 +3,7 @@ SRCS:=$(filter-out testsuite.c, $(wildcard *.c))
 OBJS:=$(patsubst %.c, %.o, $(SRCS)) 
 
 build: $(SRCS)
-	$(COMPILER) -o max.o -c max.c
+	$(COMPILER) -o math.o -c math.c
 
 cppcheck: $(SRCS)
 	cppcheck --error-exitcode=1 .
