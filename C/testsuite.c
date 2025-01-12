@@ -14,7 +14,7 @@ int clean_suite(void) { return 0; }
 
 /****** Cas de test - maximum avec arguments du même signe *****/
 void test_maximum_meme_signe(void) {
-  CU_ASSERT_EQUAL( maximum(3.1415, 0.1234), 3.1415);
+  CU_ASSERT_EQUAL( maximum(31415, 123), 31415);
   CU_ASSERT_EQUAL( maximum(2, 1), 2);
 }
 
@@ -27,8 +27,8 @@ void test_maximum_signes_opposes(void) {
 /*** Cas de test - maximum avec arguments de valeurs égales ****/ 
 void test_maximum_egalite(void) {
   CU_ASSERT_EQUAL( maximum(0, 0), 0);
-  CU_ASSERT_EQUAL( maximum(-100.01, -100.01), -100.01);
-  CU_ASSERT_EQUAL( maximum(123.4, 123.4), 123.4);
+  CU_ASSERT_EQUAL( maximum(-100, -100), -100);
+  CU_ASSERT_EQUAL( maximum(1234, 1234), 1234);
 }
 
 /******************* Lancement des tests ***********************/
