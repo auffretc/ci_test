@@ -2,34 +2,36 @@
 #include <CUnit/Basic.h>
 
 #include "math.h"
-
 #include <stdio.h>
 
-/*********** Fixations de test ***********/
+/*************** Tests unitaires du module math ****************/
 
+/** Montage de la fixation - appelé avant chaque cas de test. **/
 int init_suite(void) { return 0; }
+
+/* Démontage de la fixation - appelé après chaque cas de test. */
 int clean_suite(void) { return 0; }
 
-/************ Cas de test ****************/
-
+/************ Cas de test - arguments du même signe ************/
 void test_max_meme_signe(void) {
   CU_ASSERT_EQUAL( max(3.1415, 0.1234), 3.1415);
   CU_ASSERT_EQUAL( max(2, 1), 2);
 }
 
+/********** Cas de test - arguments de signes opposés **********/ 
 void test_max_signes_opposes(void) {
   CU_ASSERT_EQUAL( max(-2.1, 2.1), 2.1);
   CU_ASSERT_EQUAL( max(2.1, -2.1), 2.1);
 }
 
-void test_max_meme_nombre(void) {
+/********* Cas de test - arguments de valeurs égales ***********/ 
+void test_max_egalite(void) {
   CU_ASSERT_EQUAL( max(0, 0), 0);
   CU_ASSERT_EQUAL( max(-100.01, -100.01), -100.01);
   CU_ASSERT_EQUAL( max(123.4, 123.4), 123.4);
 }
 
-/******** Lancement des tests ************/
-
+/******************* Lancement des tests ***********************/
 int main ( void )
 {
    CU_pSuite pSuite = NULL;
@@ -49,7 +51,7 @@ int main ( void )
    /* ajout des cas de test dans la suite de test */
    if ( (NULL == CU_add_test(pSuite, "Cas de test max : arguments du même signe", test_max_meme_signe)) ||
         (NULL == CU_add_test(pSuite, "Cas de test max : arguments de signes opposés", test_max_signes_opposes)) ||
-        (NULL == CU_add_test(pSuite, "Cas de test max : arguments égaux", test_max_meme_nombre))
+        (NULL == CU_add_test(pSuite, "Cas de test max : arguments égaux", test_max_egalite))
       )
    {;
       CU_cleanup_registry();
