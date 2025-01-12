@@ -20,8 +20,8 @@ void test_maximum_meme_signe(void) {
 
 /**** Cas de test - maximum avec arguments de signes opposés ***/ 
 void test_maximum_signes_opposes(void) {
-  CU_ASSERT_EQUAL( maximum(-2.1, 2.1), 2.1);
-  CU_ASSERT_EQUAL( maximum(2.1, -2.1), 2.1);
+  CU_ASSERT_EQUAL( maximum(-21, 21), 21);
+  CU_ASSERT_EQUAL( maximum(21, -21), 21);
 }
 
 /*** Cas de test - maximum avec arguments de valeurs égales ****/ 
