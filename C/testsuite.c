@@ -1,10 +1,9 @@
+/*************** Tests unitaires du module math ****************/
 #include <CUnit/CUnit.h>
 #include <CUnit/Basic.h>
 
 #include "math.h"
 #include <stdio.h>
-
-/*************** Tests unitaires du module math ****************/
 
 /** Montage de la fixation - appelé avant chaque cas de test. **/
 int init_suite(void) { return 0; }
